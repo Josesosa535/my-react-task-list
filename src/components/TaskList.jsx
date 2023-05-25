@@ -8,7 +8,7 @@ function TaskList(props) {
     <div>
       <ul>
         {lista.map((tarea, indice) => {
-          return <Task contenido={tarea} key={indice}></Task>;
+          return <Task tarea={tarea} key={indice}></Task>;
         })}
       </ul>
     </div>

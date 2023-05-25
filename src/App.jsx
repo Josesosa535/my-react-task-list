@@ -12,7 +12,6 @@ function App() {
   useEffect(() => {
     setListaTareas([...listaTareas]);
   }, []);
-
   return (
     <div className="App">
       <div className="tareas">

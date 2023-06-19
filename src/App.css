@@ -1,21 +1,52 @@
-.botonAgregar {
-  margin-left: 10px;
-}
 .App {
-  background-color: rgb(249, 255, 127);
+  background-color: rgb(247, 255, 88);
   justify-content: flex-start;
-  height: 50vh;
+  height: 100%;
   margin: 15%;
-  width: 70%;
-  display: flex;
+  width: 80%;
+  display: block;
   flex-direction: column;
   align-items: center;
   font-size: 120%;
+  border: 1px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
+}
+.formulario {
+  width: 500px;
+  max-width: 100%;
+  text-align: center;
+  border: 1px;
+  margin: auto;
+  background-color: rgba(255, 230, 0, 0);
+  padding: 0;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
+}
+.tituloApp {
+  text-align: center;
+  margin-top: 0;
+}
+.botonAgregar {
+  margin-left: 10px;
+  padding: 5px;
 }
 
 .agregarTitulo {
   margin-left: 10px;
+  padding: 10px;
 }
 .agregarContenido {
   margin-left: 10px;
+  padding: 10px;
+}
+
+.iconos {
+  margin-right: 80%;
+  padding: 1px;
+}
+
+.taskList {
+  border: 1px;
+}
+.botonEliminar {
+  margin-top: 10px;
 }

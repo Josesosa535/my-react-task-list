@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
-import { BsFillTrashFill } from "react-icons/bs";
-import { SiJavascript } from "react-icons/si";
+import { FaEdit } from "react-icons/fa";
+import { BsTrash } from "react-icons/bs";
+
 function Task(props) {
   // eslint-disable-next-line react/prop-types
   const { tarea } = props;
@@ -8,8 +9,14 @@ function Task(props) {
     <li>
       <p>{tarea.titulo}</p>
       <p>{tarea.contenido}</p>
-      <BsFillTrashFill />
-      <SiJavascript />
+      <div className="iconos">
+        <button className="botonEliminar">
+          <BsTrash />
+        </button>
+        <button className="botonEditar">
+          <FaEdit />
+        </button>
+      </div>
     </li>
   );
 }

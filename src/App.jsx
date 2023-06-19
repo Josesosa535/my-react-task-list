@@ -17,6 +17,7 @@ function App() {
       <div className="tareas">
         <Header titulo={"Lista de Tareas"} />
         <form
+          className="formulario"
           onSubmit={(e) => {
             e.preventDefault();
             let miTarea = { titulo, contenido };
@@ -30,17 +31,18 @@ function App() {
           }}
         >
           <input
-            placeholder="Escribir titlo"
+            placeholder="Escribir titulo"
             className="agregarTitulo"
             onChange={(e) => setTitulo(e.target.value)}
             value={titulo}
           />
           <input
-            placeholder="escribir contenido"
+            placeholder="Escribir descripción"
             className="agregarContenido"
             onChange={(e) => setContenido(e.target.value)}
             value={contenido}
           />
+          <br />
           <button className="botonAgregar" type="submit">
             Agregar Tarea
           </button>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import TaskList from "./components/TaskList";
+import { TaskModel } from "./models/task.model";
 
 function App() {
   const [titulo, setTitulo] = useState("");
@@ -9,6 +10,41 @@ function App() {
   const miLocalStorage = localStorage.getItem("listaTareas");
   const estadoInicial = JSON.parse(miLocalStorage ? miLocalStorage : "[]");
   const [listaTareas, setListaTareas] = useState(estadoInicial);
+
+  const addTask = (e) => {
+    e.preventDefault();
+    let miTarea = new TaskModel(listaTareas.length, titulo, contenido, false);
+    setListaTareas([...listaTareas, miTarea]);
+    localStorage.setItem(
+      "listaTareas",
+      JSON.stringify([...listaTareas, miTarea])
+    );
+    setTitulo("");
+    setContenido("");
+  };
+
+  const handleDelete = (id) => {
+    const modifiedState = listaTareas.filter((tarea) => tarea.id !== id);
+    setListaTareas([...modifiedState]);
+    localStorage.setItem("listaTareas", JSON.stringify([...modifiedState]));
+  };
+
+  const handleEdit = (modifiedTask) => {
+    const modifiedState = listaTareas.map((tarea) => {
+      if (tarea.id == modifiedTask.id) {
+        return {
+          ...tarea,
+          titulo: modifiedTask.titulo,
+          contenido: modifiedTask.contenido,
+        };
+      } else {
+        return tarea;
+      }
+    });
+    setListaTareas([...modifiedState]);
+    localStorage.setItem("listaTareas", JSON.stringify([...modifiedState]));
+  };
+
   useEffect(() => {
     setListaTareas([...listaTareas]);
   }, []);
@@ -16,20 +52,7 @@ function App() {
     <div className="App">
       <div className="tareas">
         <Header titulo={"Lista de Tareas"} />
-        <form
-          className="formulario"
-          onSubmit={(e) => {
-            e.preventDefault();
-            let miTarea = { titulo, contenido };
-            setListaTareas([...listaTareas, miTarea]);
-            localStorage.setItem(
-              "listaTareas",
-              JSON.stringify([...listaTareas, miTarea])
-            );
-            setTitulo("");
-            setContenido("");
-          }}
-        >
+        <form className="formulario" onSubmit={addTask}>
           <input
             placeholder="Escribir titulo"
             className="agregarTitulo"
@@ -47,7 +70,11 @@ function App() {
             Agregar Tarea
           </button>
         </form>
-        <TaskList lista={listaTareas} />
+        <TaskList
+          onDelete={handleDelete}
+          onEdit={handleEdit}
+          lista={listaTareas}
+        />
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ Mi producto es una aplicación de lista de tareas desarrollada utilizando ReactJ
 
 #¿Cuáles son las funcionalidades más importantes y porque los usuarios las usarían?
 
-- reación y edición de tareas: Los usuarios podrán crear nuevas tareas y editar las existentes según sea necesario. Esta funcionalidad les permitirá mantener una lista de tareas actualizada y adaptada a sus necesidades en constante cambio.
+- Reación y edición de tareas: Los usuarios podrán crear nuevas tareas y editar las existentes según sea necesario. Esta funcionalidad les permitirá mantener una lista de tareas actualizada y adaptada a sus necesidades en constante cambio.
 
 - Marcar tareas completadas: La capacidad de marcar las tareas como completadas es una funcionalidad motivadora y gratificante. Los usuarios podrán tener un seguimiento claro de las tareas que han finalizado, lo que les brinda un sentido de logro y satisfacción al ver su progreso.
 

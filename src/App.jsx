@@ -1,26 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import { Route, Link, BrowserRouter, Routes } from "react-router-dom";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Tareas from "./components/Tareas";
 import SobreNosotros from "./components/SobreNosotros";
+import Simple from "./components/Simple";
 
 function App() {
   return (
     <BrowserRouter>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Inicio</Link>
-          </li>
-          <li>
-            <Link to="/tareas">Tareas</Link>
-          </li>
-          <li>
-            <Link to="/sobre-nosotros">Sobre Nosotros</Link>
-          </li>
-        </ul>
-      </nav>
+      <Simple />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tareas" element={<Tareas />} />
